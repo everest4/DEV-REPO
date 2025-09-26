@@ -9,12 +9,13 @@ body {
 /* Navigation bar */
 nav {
   max-width: 1020px;
-  margin: 20px auto;
+  margin-block: 20px;
+  margin-inline: 40px;
   background: linear-gradient(to bottom, rgb(20, 30, 50), rgb(13, 19, 31));
   color: rgb(190, 207, 219);
   padding: 10px 20px;
-  border-radius: 12px;
-  border: 0.005px solid #ddd;
+  border-radius: 25px;
+  border: 0.005px solid rgba(255, 255, 255, 0.16);
 }
 
 .nav-container {
@@ -30,13 +31,21 @@ nav {
   font-weight: bold;
 }
 
+.title {
+  opacity: 0.72;
+}
+
+.special {
+  color: rgb(103, 172, 241);
+  opacity: 1 !important;
+}
+
 /* Switch styles */
 .switch {
   position: relative;
   display: inline-block;
   width: 50px;
   height: 26px;
-  margin-left: 20px;
 }
 
 .switch input {
@@ -49,10 +58,10 @@ nav {
   position: absolute;
   cursor: pointer;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #313178;
+  background-color: #01012d;
   transition: .4s;
   border-radius: 34px;
-  border: 0.005px solid #bfcad5;
+  border: 0.005px solid rgba(255, 255, 255, 0.16);
 }
 
 .slider:before {
@@ -63,6 +72,7 @@ nav {
   left: 4px;
   bottom: 4px;
   background-color: #419fe2;
+  background: linear-gradient(to bottom right, rgb(65,167,242), rgb(179, 125, 245));
   transition: .4s;
   border-radius: 50%;
 }
@@ -87,11 +97,11 @@ nav {
   flex: 1;
   max-width: 300px;
   background: linear-gradient(to bottom, rgb(20, 30, 50), rgb(13, 19, 31));
-  border: 0.005px solid #bfcad5;
-  border-radius: 12px;
+  border: 0.005px solid rgba(255, 255, 255, 0.16);
+  border-radius: 25px;
   padding: 20px;
   text-align: left;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, border-color 0.2s;
 }
@@ -99,4 +109,10 @@ nav {
 .content > div:hover {
   transform: scale(1.05);
   border-color: #95cbf1;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;  /* space between Monthly, switch, and Yearly */
 }
