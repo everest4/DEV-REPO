@@ -8,14 +8,14 @@ body {
 
 /* Navigation bar */
 nav {
-  max-width: 1020px;
-  margin-block: 20px;
-  margin-inline: 40px;
+  width: calc(100% - 80px);
+  margin: 20px auto;
   background: linear-gradient(to bottom, rgb(20, 30, 50), rgb(13, 19, 31));
   color: rgb(190, 207, 219);
   padding: 10px 20px;
   border-radius: 25px;
   border: 0.005px solid rgba(255, 255, 255, 0.16);
+  box-sizing: border-box;
 }
 
 .nav-container {
@@ -31,13 +31,17 @@ nav {
   font-weight: bold;
 }
 
-.title {
-  opacity: 0.72;
-}
+.title { opacity: 0.72; }
 
 .special {
   color: rgb(103, 172, 241);
   opacity: 1 !important;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 /* Switch styles */
@@ -48,13 +52,7 @@ nav {
   height: 26px;
 }
 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
+.switch .slider {
   position: absolute;
   cursor: pointer;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -64,37 +62,44 @@ nav {
   border: 0.005px solid rgba(255, 255, 255, 0.16);
 }
 
-.slider:before {
+.switch .slider:before {
   position: absolute;
   content: "";
   height: 18px;
   width: 18px;
   left: 4px;
   bottom: 4px;
-  background-color: #419fe2;
   background: linear-gradient(to bottom right, rgb(65,167,242), rgb(179, 125, 245));
   transition: .4s;
   border-radius: 50%;
 }
 
-.switch input:checked + .slider {
+/* Hide the first checkbox */
+#billing-toggle {
+  position: absolute;
+  left: -9999px;
+}
+
+/* When checked gives the slider to activate */
+#billing-toggle:checked + nav .switch .slider {
   background-color: #0b1145;
 }
 
-.switch input:checked + .slider:before {
+#billing-toggle:checked + nav .switch .slider:before {
   transform: translateX(24px);
 }
 
-/* Content layout */
+/* Desktop: 3 columns */
 .content {
   display: flex;
   justify-content: center;
-  padding: 40px;
   gap: 20px;
+  padding: 40px;
+  flex-wrap: wrap;
 }
 
 .content > div {
-  flex: 1;
+  flex: 1 1 300px;
   max-width: 300px;
   background: linear-gradient(to bottom, rgb(20, 30, 50), rgb(13, 19, 31));
   border: 0.005px solid rgba(255, 255, 255, 0.16);
@@ -104,6 +109,8 @@ nav {
   aspect-ratio: 3 / 4;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
 }
 
 .content > div:hover {
@@ -111,8 +118,111 @@ nav {
   border-color: #95cbf1;
 }
 
-.topbar {
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .content > div {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* Features list */
+.features ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 15px 0;
   display: flex;
-  align-items: center;
-  gap: 10px;  /* space between Monthly, switch, and Yearly */
+  flex-direction: column;
+  gap: 8px;
+}
+
+.features li {
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: 0.9;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 4px;
+  position: relative;
+  padding-left: 28px;
+}
+
+.features li::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  box-shadow: 0 0 6px 2px rgba(76, 175, 80, 0.8);
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  margin-top: auto;
+  border: none;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to bottom, rgb(20, 30, 50), rgb(13, 19, 31));
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(65, 167, 242, 0.4);
+}
+
+.price {
+  margin: 12px 0;
+  position: relative;
+  height: 2rem; /* reserve space so it doesn’t jump */
+  overflow: hidden;
+}
+
+.price .monthly,
+.price .yearly {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(10px);
+}
+
+/* Default: monthly visible */
+.price .monthly {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Toggle: yearly visible */
+#billing-toggle:checked ~ .content .price .monthly {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+#billing-toggle:checked ~ .content .price .yearly {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.seat-info {
+  font-size: 0.85rem;
+  opacity: 0.72;
+  vertical-align: middle;
+  margin-left: 4px;
 }
