@@ -68,11 +68,13 @@ nav {
   height: 18px;
   width: 18px;
   left: 4px;
-  bottom: 4px;
+  top: 3px;
   background: linear-gradient(to bottom right, rgb(65,167,242), rgb(179, 125, 245));
   transition: .4s;
   border-radius: 50%;
 }
+
+
 
 /* Hide the first checkbox */
 #billing-toggle {
