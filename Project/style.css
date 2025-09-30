@@ -5,7 +5,6 @@ body {
   color: aliceblue;
 }
 
-
 .page-header {
   width: 100%;
   background: #101826; 
@@ -17,7 +16,6 @@ body {
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Title on the left */
 .page-header .header-title {
   margin: 0;
   font-size: 1rem;
@@ -26,7 +24,6 @@ body {
   letter-spacing: 1px;
 }
 
-/* Links or tagline on the right */
 .page-header .header-right a {
   margin-left: 30px;
   color: rgb(190, 207, 219);
@@ -39,9 +36,6 @@ body {
   color: #ffffff;
 }
 
-/*=====================================================================================*/
-
-/* Navigation bar */
 nav {
   max-width: 1060px;
   width: 100%;
@@ -89,7 +83,6 @@ nav {
   margin-bottom: 80px;
 }
 
-/* Switch styles */
 .switch {
   position: relative;
   display: inline-block;
@@ -119,15 +112,11 @@ nav {
   border-radius: 50%;
 }
 
-
-
-/* Hide the first checkbox */
 #billing-toggle {
   position: absolute;
   left: -9999px;
 }
 
-/* When checked gives the slider to activate */
 #billing-toggle:checked + nav .switch .slider {
   background-color: #0b1145;
 }
@@ -136,7 +125,6 @@ nav {
   transform: translateX(24px);
 }
 
-/* Desktop: 3 columns */
 .content {
   display: flex;
   justify-content: center;
@@ -176,7 +164,6 @@ nav {
   }
 }
 
-/* logo . */
 .features1 ul {
   list-style: none;
   padding-left: 0;
@@ -208,7 +195,6 @@ nav {
   box-shadow: 0 0 5px 5px rgba(65, 167, 242, 0.4);
 }
 
-/* Features list */
 .features ul {
   list-style: none;
   padding-left: 0;
@@ -263,7 +249,7 @@ nav {
 .price {
   margin: 12px 0;
   position: relative;
-  height: 2rem; /* reserve space so it doesn’t jump */
+  height: 2rem; 
   overflow: hidden;
 }
 
@@ -281,13 +267,11 @@ nav {
   transform: translateY(10px);
 }
 
-/* Default: monthly visible */
 .price .monthly {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Toggle: yearly visible */
 #billing-toggle:checked ~ .content .price .monthly {
   opacity: 0;
   transform: translateY(-10px);
