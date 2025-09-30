@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact us</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+
+<header class="page-header">
+  <div class="features1">
+    <ul>
+      <li> 
+        HTML/CSS can do it all
+      </li>
+    </ul>
+  </div>
+
+  <div class="header-right">
+    <a href="index.html">Pricing</a>
+    <a href="team.html">Team</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+
+<body>
+  <div class="content_inside">
+    <h2>Contact us</h2>
+    <span class="seat-info">We usually reply within one business day.</span>
+  </div>
+
+  <div class="content">
+    <div class="contact-form">
+      <form action="#" method="post">
+
+        <div class="form-group">
+          <label for="name">Full name:</label>
+          <input type="text" id="name" name="name" placeholder="John Doe" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" placeholder="+123-456-7890">
+        </div>
+
+        <div class="form-group">
+          <label for="company">Company:</label>
+          <input type="text" id="company" name="company" placeholder="Your Company">
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" placeholder="Request a demo" required>
+        </div>
+
+        <div class="form-group">
+          <label for="topic">Topic:</label>
+          <select id="topic" name="topic">
+            <option value="">Select a topic</option>
+            <option value="general">General Inquiry</option>
+            <option value="support">Support</option>
+            <option value="sales">Sales</option>
+            <option value="feedback">Feedback</option>
+          </select>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Preferred date:</label>
+          <input type="date" id="date" name="date">
+        </div>
+
+        <div class="form-group">
+          <label for="time">Preferred time:</label>
+          <input type="time" id="time" name="time">
+        </div>
+
+        <div class="form-group">
+          <label for="website">Website:</label>
+          <input type="url" id="website" name="website" placeholder="https://example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="budget">Budget (rough):</label>
+          <input type="range" id="budget" name="budget" min="1" max="5" value="3">
+        </div>
+
+        <div class="form-group full-width">
+          <label for="attachments">Attachments (RFP, brief, etc.):</label>
+          <input type="file" id="attachments" name="attachments" multiple>
+        </div>
+
+        <!-- Full-width "How can we help?" -->
+        <div class="form-group full-width">
+          <label>How can we help?</label>
+          <div class="radio-group">
+            <div>
+              <input type="radio" id="help1" name="help" value="demo">
+              <label for="help1">Demo</label>
+            </div>
+            <div>
+              <input type="radio" id="help2" name="help" value="quote">
+              <label for="help2">Quote</label>
+            </div>
+            <div>
+              <input type="radio" id="help3" name="help" value="support">
+              <label for="help3">Support</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full-width checkboxes -->
+        <div class="form-group full-width">
+          <div class="checkbox-group">
+            <label>
+              <input type="checkbox" id="subscribe" name="subscribe">
+              Subscribe to our newsletter
+            </label>
+            <label>
+              <input type="checkbox" id="consent" name="consent" required>
+              I consent to having this website store my submitted information
+            </label>
+          </div>
+        </div>
+
+        <div class="form-buttons full-width">
+          <button type="reset">Reset</button>
+          <button type="submit">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+<footer>
+  <div class="footer-content">
+    <span>&copy; 2025 My First Project at Dev.al, built with pure HTML & CSS for learning.</span>
+  </div>
+</footer>
+</html>

@@ -3,13 +3,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Price Tags</title>
+  <title>Main page</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<header class="page-header">
+  <div class="features1">
+    <ul>
+      <li> 
+        HTML/CSS can do it all
+      </li>
+    </ul>
+  </div>
 
-  <!-- Hidden toggle checkbox (controls the prices) -->
+  <div class="header-right">
+    <a href="index.html">Pricing</a>
+    <a href="team.html">Team</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<body>
+  <div class="content_inside">
+    <h2>Simple plans for teams of any size</h2>
+    <span class="seat-info">Toggle monthly/yearly pricing, meet our team, or reach out-no JavaScript required.</span>
+  </div>
+
+  <!-- Hidden checkbox to track toggle state -->
   <input type="checkbox" id="billing-toggle" aria-hidden="true">
 
   <nav>
@@ -96,4 +116,10 @@
   </div>
 
 </body>
+
+<footer>
+  <div class="footer-content">
+    <span>&copy; 2025 My First Project at Dev.al, built with pure HTML & CSS for learning.</span>
+  </div>
+</footer>
 </html>
