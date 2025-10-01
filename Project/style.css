@@ -36,6 +36,76 @@ body {
   color: #ffffff;
 }
 
+/* Hide toggle */
+.menu-toggle {
+  display: none;
+}
+
+/* Hamburger button */
+.hamburger {
+  display: none; /* hidden on desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: rgb(190, 207, 219);
+  border-radius: 2px;
+}
+
+/* Desktop nav */
+.header-right {
+  display: flex;
+  gap: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .header-right {
+    position: absolute;
+    top: 70px; /* below header */
+    right: 20px;
+    background: #101826;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 12px;
+    display: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    z-index: 1000;
+
+    /* FIX: center links */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header-right a {
+    width: 100%;        /* each link fills dropdown */
+    margin: 0;          /* remove left margin */
+    display: block;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 1100;
+  }
+
+  /* FIX: correct toggle selector */
+  #menu-toggle:checked ~ .header-right {
+    display: flex;
+  }
+}
+
+/* Make sure seat-info stays lower */
+.content_inside {
+  margin-top: 100px; /* pushes it down further below header */
+}
+
 nav {
   max-width: 1060px;
   width: 100%;
